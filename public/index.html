@@ -1,20 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="icon" 
+      type="image/png" 
+      href="https://cdn4.iconfinder.com/data/icons/animal-malibu-vol-2/128/toucan-512.png">
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
+    
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Nav CSS -->
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <!-- Composer Char Counter JS-->
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
@@ -23,7 +39,42 @@
       <span>tweeter</span>
     </nav>
 
+    <header>
+      <div>
+          <img src="/images/profile-hex.png"> 
+      </div>
+      <br>
+      <div class="name">
+          <h2>Quinton LaBorde</h2>
+      </div>
+    </header>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <form id ='tweet' method='POST' action="/tweets/">
+          <div class="text">
+            <textarea name="text" placeholder="What are you humming about?"></textarea>
+          </div>
+          <div class="below">
+            <input type="submit" value="Tweet">
+            <span class="counter">140</span>
+          </div>
+        </form>
+      </section>
+    </main>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    something
   </body>
 </html>

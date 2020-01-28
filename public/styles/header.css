@@ -1,0 +1,23 @@
+header {
+  height: 400px;
+  width: auto; /*100% width of parent container*/
+  position: relative;
+  margin-top: 120px;
+  background-color: #00ffdd;
+  background-image: url("https://i.pinimg.com/originals/3f/2d/50/3f2d500e76f654aec9eda9c3629ab51a.jpg");
+  /* background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png"); */
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+header div{
+  margin: 0;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  position: relative;
+}
+
+.name {
+  top: 30px;
+}

@@ -52,6 +52,13 @@ jQuery(function($) {
 
   }
 
+  // function to create a safe html text input from user
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
   // takes in a tweet object and returns a tweet article element containing the entire HTML structure of the tweet
   const createTweetElement = function(tweet) {
     const milisecInDay = 24 * 60 * 60 * 1000;
@@ -69,9 +76,19 @@ jQuery(function($) {
           <div class="handle">${tweet.user.handle}</div>
         </div>
       </header>
-      <p class="tweetFeed">.text(tweet.content.text)</p>
+      <p class="tweetFeed">${escape(tweet.content.text)}</p>
       <footer class="timeStamp">${timeDiff} days ago</footer>
     </article>`;
     return markup;
   }
 });
+
+// function to toggle new tweet bar
+function toggleTweet() {
+  const x = document.getElementById("tweet");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}

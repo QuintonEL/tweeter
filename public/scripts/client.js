@@ -69,11 +69,9 @@ jQuery(function($) {
           <div class="handle">${tweet.user.handle}</div>
         </div>
       </header>
-      <p class="tweetFeed">${tweet.content.text}</p>
+      <p class="tweetFeed">.text(tweet.content.text)</p>
       <footer class="timeStamp">${timeDiff} days ago</footer>
     </article>`;
     return markup;
   }
-
-  // renderTweets(data);
 });

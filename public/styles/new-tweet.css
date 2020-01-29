@@ -82,7 +82,7 @@ figcaption {
 /* move handle up */
 .handle {
   padding-top: 20%;
-  /* display: none; */
+  opacity: 0;
 }
 
 /* footer positioning */
@@ -91,18 +91,14 @@ figcaption {
   font-size: 15px;
 }
 
-/* hover functionality for handle */
-.handle:hover {
-  text-shadow: 6px 6px #00ffdd;
-}
-
 /* to make the tweet hover when the mouse is above */
-article:hover {
-  box-shadow: 6px 6px #00ffdd;
-
-  
+article:hover{
+  box-shadow: 6px 6px #00ffdd;  
 }
-
+article:hover .handle{
+  color: #00ffdd;
+  opacity: 1;
+}
 /* the paragraph containing the tweet in the feed */
 .tweetFeed {
   margin: 2%;

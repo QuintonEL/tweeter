@@ -39,7 +39,7 @@
       <span>tweeter</span>
     </nav>
 
-    <header>
+    <header class="mainHeader">
       <div>
           <img src="/images/profile-hex.png"> 
       </div>
@@ -50,31 +50,45 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
+      <!-- For composing a new tweet -->
       <section class="new-tweet">
         <form id ='tweet' method='POST' action="/tweets/">
-          <div class="text">
-            <textarea name="text" placeholder="What are you humming about?"></textarea>
-          </div>
+            <textarea id="textBox" name="text" placeholder="What are you humming about?"></textarea>
           <div class="below">
             <input type="submit" value="Tweet">
             <span class="counter">140</span>
           </div>
         </form>
       </section>
+      <!-- For all the tweets -->
+      <section class="the-tweets">
+        <article class="newTweet"> <!--flexbox column-->
+          <header> <!--flexbox row-->
+            <figure>
+              <img src="https://i.imgur.com/73hZDYK.png" alt="" class="avatar">
+              <figcaption class="userName">Newton</figcaption>
+            </figure>
+            <div class="info">
+              <div class="handle">@Sirisaac</div>
+            </div>
+          </header>
+          <p class="tweetFeed">If I have seen further it is by standing on the shoulders of giants</p>
+        <footer class="timeStamp">10 days ago</footer>
+        </article>
+        <article class="newTweet">
+          <header>
+            <figure>
+              <img src="https://i.imgur.com/nlhLi3I.png" alt="" class="avatar">
+              <figcaption class="userName">Descartes</figcaption>
+            </figure>
+            <div class="info">
+              <div class="handle">@rd</div>
+            </div>
+          </header>
+          <p class="tweetFeed">Je pense , donc je suis</p>
+        <footer class="timeStamp">10 days ago</footer>
+        </article>
+      </section>
     </main>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    something
   </body>
 </html>

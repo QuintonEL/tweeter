@@ -22,7 +22,9 @@ jQuery(function($) {
       alert("Tweet Is Too Long!");
     } else {
       $.ajax('/tweets', { method: 'POST', data })
-      .then(function () {
+      .then( () => {
+        $(this).trigger('reset'); // clear input feild
+        $('.counter').text(i=140)
         loadTweets()
       })
     }

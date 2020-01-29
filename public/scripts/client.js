@@ -3,6 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
 // wait till ready
 jQuery(function($) {
 
@@ -11,57 +12,34 @@ jQuery(function($) {
   // turn form data into query string and send to server
   $("#tweet").submit(function(event) {
     event.preventDefault();
-    const serial = $( this ).serialize();
-    console.log(serial);
+    const data = $(this).serialize();
+    console.log(data);
+    $.ajax('/tweets', { method: 'POST', data })
+    .then(function () {
+      loadTweets()
+    })
   });
 
   const loadTweets = function() {
-    const $button = $('#load-more-posts');
-    $button.on('click', function () {
-      console.log('Button clicked, performing ajax call...');
-      $.ajax('more-posts.html', { method: 'GET' })
-      .then(function (morePostsHtml) {
-        console.log('Success: ', morePostsHtml);
-        $button.replaceWith(morePostsHtml);
-      });
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (getTweet) {
+      console.log('Success: ', getTweet);
+      // $('.the-tweets').prepend(createTweetElement(getTweet))
+      renderTweets(getTweet)
     });
   }
+  
 
-  loadTweets()
-
-  const data = [
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png"
-        ,
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1461116232227
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd" },
-      "content": {
-        "text": "Je pense , donc je suis"
-      },
-      "created_at": 1461113959088
-    }
-  ]
-
-  const $tweetContainer = $(".the-tweets");
-
-  const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-  const $createdTweets = $(tweets.map(createTweetElement).join(" "));
-  return $tweetContainer.append($createdTweets);
+  const renderTweets = function(tweets) {
+    // reference html container for tweet feed
+    const $tweetContainer = $(".the-tweets");
+    $tweetContainer.empty(); //empty out container so we don't see duplicates
+    const $createdTweets = $(tweets.map(createTweetElement).join(" "));
+    return $tweetContainer.append($createdTweets);
+
   }
 
   // takes in a tweet object and returns a tweet article element containing the entire HTML structure of the tweet
@@ -87,5 +65,5 @@ jQuery(function($) {
     return markup;
   }
 
-  renderTweets(data);
+  // renderTweets(data);
 });

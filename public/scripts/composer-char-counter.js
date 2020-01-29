@@ -18,15 +18,14 @@ const checker = function(key) {
 jQuery(function($) {
 
   //$('textarea').on('keydown', function(key){ // this refers to textarea
-  $('.new-tweet').on('keyup', '#tweet textarea', function(key){
+  $('.new-tweet').on('keyup', '#tweet textarea', function(){
     const charsTyped = $(this).val().length; // get the length of the current value in this
     const charsLeft = 140 - charsTyped; // get remaining characters left
     const updatedCount = $(this).next().find('.counter').html(charsLeft); // get html for charsLeft of the counter class in the span 
-
     if (charsLeft < 0) {
       updatedCount.addClass('color-red');
     } else {
-      $('.counter').removeClass('color-red');
+      updatedCount.removeClass('color-red');
     }
 
     // if (key.keyCode === 8) { //backspace

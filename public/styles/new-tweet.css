@@ -13,6 +13,7 @@ input {
   border: 0;
   padding-left: 10px;
   padding-right: 10px;
+  border-radius: 4px;
 }
 
 /* text box */
@@ -81,7 +82,7 @@ figcaption {
 }
 /* move handle up */
 .handle {
-  padding-top: 20%;
+  padding-top: 40%;
   opacity: 0;
 }
 

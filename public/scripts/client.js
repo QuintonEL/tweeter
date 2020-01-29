@@ -6,6 +6,29 @@
 // wait till ready
 jQuery(function($) {
 
+  // listen for form submission
+  // prevent default form submission behavior
+  // turn form data into query string and send to server
+  $("#tweet").submit(function(event) {
+    event.preventDefault();
+    const serial = $( this ).serialize();
+    console.log(serial);
+  });
+
+  const loadTweets = function() {
+    const $button = $('#load-more-posts');
+    $button.on('click', function () {
+      console.log('Button clicked, performing ajax call...');
+      $.ajax('more-posts.html', { method: 'GET' })
+      .then(function (morePostsHtml) {
+        console.log('Success: ', morePostsHtml);
+        $button.replaceWith(morePostsHtml);
+      });
+    });
+  }
+
+  loadTweets()
+
   const data = [
     {
       "user": {
@@ -43,14 +66,13 @@ jQuery(function($) {
 
   // takes in a tweet object and returns a tweet article element containing the entire HTML structure of the tweet
   const createTweetElement = function(tweet) {
-  // let $tweet = $('<article>').addClass('tweet');
     const milisecInDay = 24 * 60 * 60 * 1000;
     const firstDate = new Date(tweet.created_at);
     const secondDate = new Date();
     const timeDiff = Math.round(Math.abs((firstDate - secondDate) / milisecInDay));
     const markup =
     `<article class="newTweet">
-      <header> <!--flexbox row-->
+      <header>
         <figure>
           <img src=${tweet.user.avatars} alt="" class="avatar">
           <figcaption class="userName">${tweet.user.name}</figcaption>
@@ -63,7 +85,6 @@ jQuery(function($) {
       <footer class="timeStamp">${timeDiff} days ago</footer>
     </article>`;
     return markup;
-  // return $tweet;
   }
 
   renderTweets(data);

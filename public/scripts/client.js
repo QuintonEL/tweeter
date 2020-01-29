@@ -7,17 +7,25 @@
 // wait till ready
 jQuery(function($) {
 
+  
   // listen for form submission
   // prevent default form submission behavior
   // turn form data into query string and send to server
   $("#tweet").submit(function(event) {
     event.preventDefault();
     const data = $(this).serialize();
-    console.log(data);
-    $.ajax('/tweets', { method: 'POST', data })
-    .then(function () {
-      loadTweets()
-    })
+    // if nothing is entered to tweet
+    if (data === "text=") {
+      alert("Please Enter Something To Tweet!");
+      // if data is too long
+    } else if (data.length > 145) {
+      alert("Tweet Is Too Long!");
+    } else {
+      $.ajax('/tweets', { method: 'POST', data })
+      .then(function () {
+        loadTweets()
+      })
+    }
   });
 
   const loadTweets = function() {
@@ -28,7 +36,7 @@ jQuery(function($) {
       renderTweets(getTweet)
     });
   }
-  
+  // Window.onload(loadTweets())
 
   // loops through tweets
   // calls createTweetElement for each tweet

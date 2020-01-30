@@ -9,7 +9,7 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300,300i,700,700i&display=swap" rel="stylesheet">
     
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -38,13 +38,23 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <div class="mainNav">
+      <span>tweeter</span>
+      <div class = formToggle>
+        <div class="arrowDouble">
+          <button id="formToggleButton" onclick="toggleTweet()"><b>Write</b> a new tweet</button>
+        </div>
+        <img id="arrow" src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/double-arrow-down-512.png" alt="downArrow" onclick="toggleTweet()">
+      </div>
+    </div>
+
+    <!-- <nav>
       <span>tweeter</span>
       <span class = formToggle>
         <img id="arrow" src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/double-arrow-down-512.png" alt="downArrow" onclick="toggleTweet()">
-        <button id="formToggleButton" onclick="toggleTweet()">Write a new tweet</button>
+        <button id="formToggleButton" onclick="toggleTweet()"><b>Write</b> a new tweet</button>
       </span>
-    </nav>
+    </nav> -->
 
     <header class="mainHeader">
       <div>
@@ -66,7 +76,8 @@
         <form id ='tweet' method='POST' action="/tweets/">
             <textarea id="textBox" name="text" placeholder="What are you humming about?"></textarea>
           <div class="below">
-            <input id="button" type="submit" value="Tweet">
+            <input class="glow-on-hover" id="button" type="submit" value="Tweet">
+            <!-- <button class="glow-on-hover" type="button">Tweet</button> -->
             <span class="counter">140</span>
           </div>
         </form>

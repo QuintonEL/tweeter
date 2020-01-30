@@ -44,8 +44,8 @@
   justify-content: space-between;
   float: right;
 }
-/* sdasdsdasdasd */
 
+/* bounce animation for arrow button */
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
 		-webkit-transform: translateY(0);

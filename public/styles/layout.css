@@ -57,3 +57,45 @@ main {
   border-radius: 50%; /* Rounded corners */
   font-size: 20px; /* Increase font size */
 }
+
+/* breakpoints for layout shift */
+
+.containerMain {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+@media (max-width: 1024px) {
+  .mainHeader {
+    width: 100%;
+    /* margin-top: 120px; */
+  }  
+  #textbox {
+    margin-top: 50px;
+  }
+
+  .containerMain {
+    margin-top: 4em;
+  }
+
+  #tweet {
+    margin-top: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .container {
+    width: 50%;
+  }
+
+  .mainHeader {
+    width: 30%;
+    margin-left: 2em;
+  }
+
+  .containerMain {
+    margin-top: 7em;
+  }
+
+}

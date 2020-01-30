@@ -1,10 +1,13 @@
 .mainHeader {
   height: 400px;
-  width: auto; /*100% width of parent container*/
+  /* width: auto; */
   position: relative;
-  margin-top: 120px;
+  /* margin-top: 120px; */
   background-color: #09ff00;
-  background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png");
+  /* background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png"); */
+  background-image: url("https://img4.goodfon.com/original/1920x1080/8/5b/blade-runner-render-fan-art-unreal-engine-4.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
 header div{
@@ -19,4 +22,9 @@ header div{
 .name {
   top: 30px;
   color: #f4f1ec;
+}
+
+.avatar-man {
+  height: 9em;
+  width: 9em;
 }

@@ -17,6 +17,15 @@
   padding-bottom: 5px;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: 0 9px #999;
+}
+
+/* #button:hover {background-color: #09ff00} */
+
+#button:active {
+  background-color: #09ff00;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 /* text box */
@@ -63,10 +72,6 @@ span {
 
 /* for the new post header */
 .newTweet header {
-  /* content: "";
-  display: inline-block;
-  height: 100%;
-  vertical-align: middle; */
   margin: 0% 1% 0 1%;
   display: flex;
   flex-direction: row;

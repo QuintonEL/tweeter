@@ -17,6 +17,8 @@ nav span {
 }
 
 #formToggleButton {
+  top: 0;
+  right: 0;
   float: right;
   font-family: 'Source Sans Pro', sans-serif;
   background-color: #4056A1;
@@ -24,4 +26,18 @@ nav span {
   border: 0;
   font-size: 30px;
   cursor: pointer;
+  outline: 0;
 }
+
+#arrow {
+  float: right;
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  margin-top: 9px;
+}
+
+/* .formToggle {
+  display: flex;
+  flex-direction: column;
+} */

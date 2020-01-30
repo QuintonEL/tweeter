@@ -16,15 +16,29 @@ jQuery(function($) {
     const data = $(this).serialize();
     // if nothing is entered to tweet
     if (data === "text=") {
-      alert("Please Enter Something To Tweet!");
+      $('.output1').slideDown();
+      $(document).ready(function(){
+        function hideMsg(){
+          $('.output1').slideUp();
+        }
+        setTimeout(hideMsg,2000);
+      });
       // if data is too long
     } else if (data.length > 145) {
-      alert("Tweet Is Too Long!");
+      $('.output2').slideDown();
+      $(document).ready(function(){
+        function hideMsg(){
+          $('.output2').slideUp();
+        }
+        setTimeout(hideMsg,2000);
+    });
     } else {
       $.ajax('/tweets', { method: 'POST', data })
       .then( () => {
+        $('.output1').hide()
+        $('.output2').hide()
         $(this).trigger('reset'); // clear input feild
-        $('.counter').text(i=140)
+        $('.counter').text(i = 140)
         loadTweets()
       })
     }
@@ -45,6 +59,7 @@ jQuery(function($) {
   // takes return value and appends it to the tweets container
   const renderTweets = function(tweets) {
     // reference html container for tweet feed
+    tweets.reverse();
     const $tweetContainer = $(".the-tweets");
     $tweetContainer.empty(); //empty out container so we don't see duplicates
     const $createdTweets = $(tweets.map(createTweetElement).join(" "));
@@ -53,7 +68,7 @@ jQuery(function($) {
   }
 
   // function to create a safe html text input from user
-  const escape =  function(str) {
+  const escape = function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -91,4 +106,26 @@ function toggleTweet() {
   } else {
     x.style.display = "none";
   }
+}
+// $( ".tweet" ).slideToggle( 1200 )
+
+
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  //Get the button:
+  mybutton = document.getElementById("myBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }

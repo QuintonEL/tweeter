@@ -23,6 +23,9 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Error CSS -->
+    <link rel="stylesheet" href="/styles/error-page.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -38,6 +41,7 @@
     <nav>
       <span>tweeter</span>
       <span class = formToggle>
+        <img id="arrow" src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/double-arrow-down-512.png" alt="downArrow" onclick="toggleTweet()">
         <button id="formToggleButton" onclick="toggleTweet()">Write a new tweet</button>
       </span>
     </nav>
@@ -55,6 +59,10 @@
     <main class="container">
       <!-- For composing a new tweet -->
       <section class="new-tweet">
+        <div id="error">
+          <h1 class="output1">Please Enter Something To Tweet!</h1>
+          <h1 class="output2">Tweet Is Too Long!</h1>
+        </div>
         <form id ='tweet' method='POST' action="/tweets/">
             <textarea id="textBox" name="text" placeholder="What are you humming about?"></textarea>
           <div class="below">
@@ -62,10 +70,11 @@
             <span class="counter">140</span>
           </div>
         </form>
+
       </section>
       <!-- For all the tweets -->
-      <section class="the-tweets">
-      </section>
+      <section class="the-tweets"></section>
+      <button id="myBtn" onclick="topFunction()" title="Go to top"></button>
     </main>
   </body>
 </html>

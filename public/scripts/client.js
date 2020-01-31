@@ -1,9 +1,7 @@
 // wait till ready
 jQuery(function($) {
 
-  // listen for form submission
-  // prevent default form submission behavior
-  // turn form data into query string and send to server
+  // listen for form submission and turn data into query string and send to server
   $("#tweet").submit(function(event) {
     event.preventDefault();
     const data = $(this).serialize();
@@ -14,7 +12,7 @@ jQuery(function($) {
         function hideMsg(){
           $('.output1').slideUp();
         }
-        setTimeout(hideMsg,2000);
+        setTimeout(hideMsg,2000); // delay on message hide
       });
       // if data is too long
     } else if (data.length > 145) {
@@ -23,7 +21,7 @@ jQuery(function($) {
         function hideMsg(){
           $('.output2').slideUp();
         }
-        setTimeout(hideMsg,2000);
+        setTimeout(hideMsg,2000); // delay on message hide
     });
     } else {
       $.ajax('/tweets', { method: 'POST', data })
@@ -37,20 +35,16 @@ jQuery(function($) {
     }
   });
 
+  // get tweets and render
   const loadTweets = function() {
     $.ajax('/tweets', { method: 'GET' })
     .then(function (getTweet) {
-      console.log('Success: ', getTweet);
       renderTweets(getTweet)
     });
   }
-  // Window.onload(loadTweets())
 
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
+  // loops through tweets and calls createTweetElement and appends to container
   const renderTweets = function(tweets) {
-    // reference html container for tweet feed
     tweets.reverse();
     const $tweetContainer = $(".the-tweets");
     $tweetContainer.empty(); //empty out container so we don't see duplicates

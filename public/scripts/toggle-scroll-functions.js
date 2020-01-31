@@ -1,10 +1,11 @@
 // function to toggle new tweet bar
 function toggleTweet() {
-  const x = document.getElementById("tweet");
-  if (x.style.display === "none") {
-    x.style.display = "block";
+  const bar = document.getElementById("tweet");
+  if ($('#textBox').is(':visible')) {
+    $('#tweet').slideUp()
   } else {
-    x.style.display = "none";
+    $('#tweet').slideDown()
+    $('#textBox').focus();
   }
 }
 

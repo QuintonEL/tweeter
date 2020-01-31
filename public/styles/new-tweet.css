@@ -37,7 +37,7 @@
   height: 50px;
   background: rgba(76, 175, 80, 0);
   resize: none;
-  outline: 0;
+  /* outline: 0; */
 }
 
 /* text inside text box */
@@ -126,4 +126,14 @@ article:hover .handle{
 /* positioning for avatar */
 .avatar {
   float: left;
+}
+
+/* post a new tweet bar hidden on page load */
+#tweet {
+display: none;
+}
+
+.flag .retweet .like {
+  height: 5px;
+  width: 5px;
 }

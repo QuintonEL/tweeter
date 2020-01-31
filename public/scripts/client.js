@@ -78,7 +78,12 @@ jQuery(function($) {
         </div>
       </header>
       <p class="tweetFeed">${escape(tweet.content.text)}</p>
-      <footer class="timeStamp">${timeDiff} days ago</footer>
+      <footer class="timeStamp">
+        ${timeDiff} days ago 
+        <img src="../images/like.png" align="right">
+        <img src="../images/retweet.png" align="right">
+        <img src="../images/flag.png" align="right">
+      </footer>
     </article>`;
     return markup;
   }

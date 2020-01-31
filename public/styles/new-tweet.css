@@ -133,7 +133,8 @@ article:hover .handle{
 display: none;
 }
 
-.flag .retweet .like {
-  height: 5px;
-  width: 5px;
+/* properties for like, retweet, flag */
+.timeStamp img {
+  width: 2%;
+  margin-right: 10px;
 }

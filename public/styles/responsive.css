@@ -1,0 +1,38 @@
+/* flex on entire body */
+.containerMain {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+/* breakpoint conditions for everything below 1024px */
+@media (max-width: 1024px) {
+  .mainHeader {
+    width: 100%;
+  }  
+  #textbox {
+    margin-top: 50px;
+  }
+  #tweet {
+    margin-top: 1em;
+  }
+  .main-nav {
+    background-color: transparent;
+  }
+}
+
+/* breakpoint conditions for everything above 1024px */
+@media (min-width: 1024px) {
+  .container {
+    width: 50%;
+  }
+  .mainHeader {
+    width: 30%;
+    margin-left: 2em;
+  }
+  .containerMain {
+    margin-top: 7em;
+  }
+  .mainNav {
+    background-color: #4056A1;
+  }
+}

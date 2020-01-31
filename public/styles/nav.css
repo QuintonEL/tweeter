@@ -1,14 +1,15 @@
+/* entire navigation bar */
 .mainNav {
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
-  width: 100%; /* Full width */
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 120px;
   z-index: 1000;
-  background-color: #4056A1;
   color: #FFFFFF;
   padding: 1.5em;
 }
 
+/* tweeter text */
 .mainNav span {
   font-family: 'Bungee', cursive;
   font-size: 55px;
@@ -16,12 +17,12 @@
   bottom: 8px;
 }
 
+/* text toggle button */
 #formToggleButton {
   top: 0;
   right: 0;
-  /* float: right; */
   font-family: 'Source Sans Pro', sans-serif;
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFFFFF;
   border: 0;
   font-size: 30px;
@@ -29,15 +30,15 @@
   outline: 0;
 }
 
+/* arrow toggle button */
 #arrow {
-  /* float: right; */
   height: 30px;
   width: 30px;
   cursor: pointer;
-  /* margin-top: 9px; */
   margin-left: 45%;
 }
 
+/* container for the buttons */
 .formToggle {
   display: flex;
   flex-direction: column;
@@ -45,23 +46,23 @@
   float: right;
 }
 
-/* bounce animation for arrow button */
+/* bounce animation for arrow toggle button */
 @keyframes bounce {
 	0%, 20%, 60%, 100% {
 		-webkit-transform: translateY(0);
 		transform: translateY(0);
 	}
-
 	40% {
 		-webkit-transform: translateY(-20px);
 		transform: translateY(-20px);
 	}
-
 	80% {
 		-webkit-transform: translateY(-10px);
 		transform: translateY(-10px);
 	}
 }
+
+/* queue animation on hover */
 #arrow:hover {
   animation: bounce 1s;
   animation-iteration-count: 10;

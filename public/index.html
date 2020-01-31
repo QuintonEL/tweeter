@@ -5,7 +5,8 @@
     <link rel="icon" 
       type="image/png" 
       href="https://cdn4.iconfinder.com/data/icons/business-liconica-color/128/bird-flying-announcement-wings-512.png">
-    <!-- Meta Information -->
+    
+      <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
@@ -14,6 +15,9 @@
     
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <!-- Responsiveness CSS -->
+    <link rel="stylesheet" href="/styles/responsive.css" type="text/css" />
 
     <!-- Nav CSS -->
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
@@ -33,10 +37,12 @@
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
 
+    <!-- Functions JS -->
+    <script type="text/javascript" src="/scripts/toggle-scroll-functions.js"></script>
+
     <!-- Composer Char Counter JS-->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
-
   <body class="containerMain">
     <!-- Top nav bar (fixed) -->
     <div class="mainNav">
@@ -48,23 +54,13 @@
         <img id="arrow" src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/double-arrow-down-512.png" alt="downArrow" onclick="toggleTweet()">
       </div>
     </div>
-
-    <!-- <nav>
-      <span>tweeter</span>
-      <span class = formToggle>
-        <img id="arrow" src="https://cdn0.iconfinder.com/data/icons/glyphpack/26/double-arrow-down-512.png" alt="downArrow" onclick="toggleTweet()">
-        <button id="formToggleButton" onclick="toggleTweet()"><b>Write</b> a new tweet</button>
-      </span>
-    </nav> -->
-
     <header class="mainHeader">
       <div>
-          <!-- <img src="/images/profile-hex.png"> -->
           <img class="avatar-man" src="/images/avatar-man.png">
       </div>
       <br>
       <div class="name">
-          <h2>Quinton LaBorde</h2>
+        <b>Quinton</b> LaBorde
       </div>
     </header>
     <!-- Page-specific (main) content here -->
@@ -79,14 +75,13 @@
             <textarea id="textBox" name="text" placeholder="What are you humming about?"></textarea>
           <div class="below">
             <input class="glow-on-hover" id="button" type="submit" value="Tweet">
-            <!-- <button class="glow-on-hover" type="button">Tweet</button> -->
             <span class="counter">140</span>
           </div>
         </form>
-
       </section>
       <!-- For all the tweets -->
       <section class="the-tweets"></section>
+      <!-- Go to top button -->
       <button id="myBtn" onclick="topFunction()" title="Go to top"></button>
     </main>
   </body>

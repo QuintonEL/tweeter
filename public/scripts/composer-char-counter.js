@@ -14,7 +14,6 @@ const checker = function(key) {
 }
 
 // when the document is rendered and ready to listen go into the function
-//$(document).ready(function() {
 jQuery(function($) {
 
   //$('textarea').on('keydown', function(key){ // this refers to textarea

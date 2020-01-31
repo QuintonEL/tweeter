@@ -1,5 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=Inconsolata';
 
+/* first error message */
 .output1 {
   color: red;
   font-family: 'Source Sans Pro', sans-serif;
@@ -9,6 +10,8 @@
   text-align: center;
   font-size: 30px;
 }
+
+/* second error message */
 .output2 {
   color: red;
   font-family: 'Source Sans Pro', sans-serif;

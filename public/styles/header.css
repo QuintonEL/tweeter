@@ -1,15 +1,15 @@
+/* everything in the header with user info */
 .mainHeader {
   height: 400px;
-  /* width: auto; */
   position: relative;
-  /* margin-top: 120px; */
   background-color: #09ff00;
   /* background-image: url("https://www.transparenttextures.com/patterns/escheresque-dark.png"); */
-  background-image: url("https://img4.goodfon.com/original/1920x1080/8/5b/blade-runner-render-fan-art-unreal-engine-4.jpg");
+  background-image: url("https://newevolutiondesigns.com/images/freebies/galaxy-wallpaper-1.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
 
+/* applies to the name and avatar in the header */
 header div{
   margin: 0;
   top: 50%;
@@ -19,11 +19,14 @@ header div{
   position: relative;
 }
 
+/* styling for the name */
 .name {
-  top: 30px;
+  top: 1.5em;
   color: #f4f1ec;
+  font-size: 40px;
 }
 
+/* styling for the avatar */
 .avatar-man {
   height: 9em;
   width: 9em;
